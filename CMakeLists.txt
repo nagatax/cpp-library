@@ -10,6 +10,7 @@ include_directories(${PROJECT_SOURCE_DIR}/vendor/googletest/include)
 set(static_libraries
         ${PROJECT_SOURCE_DIR}/vendor/googletest/lib/libgtest.a
         ${PROJECT_SOURCE_DIR}/vendor/googletest/lib/libgtest_main.a
+        -lpthread
         )
 
 # Define source files
