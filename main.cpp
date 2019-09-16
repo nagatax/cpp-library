@@ -1,5 +1,4 @@
 #include "gtest/gtest.h"
-#include "src/array.h"
 
 int main(int argc, char *argv[]) {
 
