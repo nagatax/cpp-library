@@ -10,6 +10,7 @@ curl -OL https://github.com/google/googletest/archive/release-1.8.1.tar.gz \
 && cd googletest-release-1.8.1 \
 && cmake . \
 && make \
+&& cd .. \ 
 && rm -f release-1.8.1.tar.gz 
 ```
 
@@ -35,7 +36,7 @@ mkdir -p vendor/googlemock/lib \
 
 ```bash
 cmake . \
-make
+&& make
 ```
 
 ## Execute executable file
