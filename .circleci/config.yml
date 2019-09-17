@@ -9,21 +9,8 @@ jobs:
       - checkout
         # Install related packages
       - run: sudo apt install cmake g++
-        # Download Google test file
-      - run: sudo curl -OL https://github.com/google/googletest/archive/release-1.8.1.tar.gz
-      - run: tar xvf release-1.8.1.tar.gz
-      - run: cd googletest-release-1.8.1 && cmake . && make
-      - run: rm -f release-1.8.1.tar.gz
-        # Install Google test
-      - run: mkdir -p vendor/googletest/lib
-      - run: cp -a googletest-release-1.8.1/googlemock/gtest/libgtest.a vendor/googletest/lib/libgtest.a
-      - run: cp -a googletest-release-1.8.1/googlemock/gtest/libgtest_main.a vendor/googletest/lib/libgtest_main.a
-      - run: cp -a googletest-release-1.8.1/googletest/include vendor/googletest/include
-        # Install Google mock
-      - run: mkdir -p vendor/googlemock/lib
-      - run: cp -a googletest-release-1.8.1/googlemock/libgmock.a vendor/googlemock/lib/libgmock.a
-      - run: cp -a googletest-release-1.8.1/googlemock/libgmock_main.a vendor/googlemock/lib/libgmock_main.a
-      - run: cp -a googletest-release-1.8.1/googlemock/include vendor/googlemock/include
+        # Set up Google test
+      - run: chmod +x setup_googletest.sh && ./setup_googletest.sh
         # Build project files
       - run: cmake . && make
         # Execute tests
