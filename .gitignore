@@ -3,3 +3,10 @@ cmake-build-debug
 
 # CLion configure files
 .idea
+
+# Related cmake files
+Makefile
+CMakeFiles
+cmake_install.cmake
+cpplang_library
+CMakeCache.txt
