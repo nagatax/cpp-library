@@ -14,11 +14,14 @@ set(static_libraries
         )
 
 # Define source files
-set(cpplang_src
-        src/array.cpp
-        test/array_unittest.cpp
-        main.cpp
-        )
+set(
+    cpplang_src
+    src/array.cpp
+    src/convert_base_number.cpp
+    test/array_unittest.cpp
+    test/convert_base_number_unittest.cpp
+    main.cpp
+)
 
 add_executable(cpplang_library ${cpplang_src})
 target_link_libraries(cpplang_library ${static_libraries})

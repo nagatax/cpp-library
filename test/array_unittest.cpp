@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "../src/array.h"
+#include "../src/array.hpp"
 
 TEST(array_test, func_ary_reverse) {
 
