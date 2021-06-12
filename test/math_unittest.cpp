@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
-#include "../src/convert_base_number.hpp"
+#include "../src/math.hpp"
 
-TEST(convert_base_number, convert_base_number)
+TEST(math, convert_base_number)
 {
     std::string sut;
 
@@ -16,4 +16,18 @@ TEST(convert_base_number, convert_base_number)
     EXPECT_EQ(sut, "10");
     sut = convert_base_number( 11, 2);
     EXPECT_EQ(sut, "1011");
+}
+
+TEST(math, is_prime)
+{
+    bool sut;
+
+    // 2進数の基数変換を検証
+    // 13は素数
+    sut = is_prime(13);
+    EXPECT_EQ(sut, true);
+
+    // 4は素数でない(2で割り切れる)
+    sut = is_prime(4);
+    EXPECT_EQ(sut, false);
 }

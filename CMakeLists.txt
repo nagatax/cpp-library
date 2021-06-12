@@ -16,11 +16,9 @@ set(static_libraries
 # Define source files
 set(cpplang_src
         src/array.cpp
-        src/convert_base_number.cpp
-        src/is_prime.cpp
+        src/math.cpp
         test/array_unittest.cpp
-        test/convert_base_number_unittest.cpp
-        test/is_prime_unittest.cpp
+        test/math_unittest.cpp
         main.cpp
         )
 
