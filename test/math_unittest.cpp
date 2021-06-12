@@ -18,6 +18,12 @@ TEST(math, convert_base_number)
     EXPECT_EQ(sut, "1011");
 }
 
+TEST(math, factorial)
+{
+    int sut = factorial(3);
+    EXPECT_EQ(sut, 6);
+}
+
 TEST(math, is_prime)
 {
     bool sut;

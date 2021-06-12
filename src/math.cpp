@@ -26,6 +26,21 @@ std::string convert_base_number(unsigned int target, int base_number)
 }
 
 /**
+ * 整数nの階乗を返す
+ *
+ * @param int n 整数
+ * @return
+ */
+int factorial(int n)
+{
+    if (n > 0) {
+        return n * factorial(n - 1);
+    } else {
+        return 1;
+    }
+}
+
+/**
  * 素数かどうか判定する
  * (素数: 自分自身と1以外の整数で割り切ることができない整数)
  *
