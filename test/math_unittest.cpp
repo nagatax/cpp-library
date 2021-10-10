@@ -48,3 +48,20 @@ TEST(math, is_prime)
     sut = is_prime(39);
     EXPECT_EQ(sut, false);
 }
+
+TEST(math, is_leap)
+{
+    bool sut;
+
+    // 2000年はうるう年
+    sut = is_leap(2000);
+    EXPECT_EQ(sut, true);
+
+    // 2001年はうるう年でない
+    sut = is_leap(2001);
+    EXPECT_EQ(sut, false);
+
+    // 2100年はうるう年でない
+    sut = is_leap(2100);
+    EXPECT_EQ(sut, false);
+}

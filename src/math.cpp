@@ -68,3 +68,15 @@ bool is_prime(unsigned int target)
 
     return true;
 }
+
+/**
+ * うるう年かどうか判定する
+ * (4で割り切れる年がうるう年。ただし、100で割り切れても400で割り切れない年はうるう年でない)
+ *
+ * @param const int target 判定対象(年)
+ * @return
+ */
+bool is_leap(const int target)
+{
+    return ((target % 4) == 0 && (target % 100) != 0 || (target % 400) == 0);
+}
