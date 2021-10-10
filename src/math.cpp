@@ -49,7 +49,18 @@ int factorial(int n)
  */
 bool is_prime(unsigned int target)
 {
-    for (int i = 2; i < target; i++) {
+    if (target == 2) {
+        // 判定対象が2の場合
+        // 素数である
+        return true;
+    } else if ((target % 2) == 0) {
+        // 判定対象が偶数の場合
+        // 2で割り切れるので素数でない
+        return false;
+    }
+
+    for (int i = 3; i < target; i+=2) {
+        // 奇数で判定対象が割り切れるか判定する
         if ((target % i) == 0) {
             return false;
         }

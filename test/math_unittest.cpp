@@ -28,12 +28,23 @@ TEST(math, is_prime)
 {
     bool sut;
 
-    // 2進数の基数変換を検証
+    // 2は素数
+    sut = is_prime(2);
+    EXPECT_EQ(sut, true);
+
+    // 3は素数
+    sut = is_prime(3);
+    EXPECT_EQ(sut, true);
+
     // 13は素数
     sut = is_prime(13);
     EXPECT_EQ(sut, true);
 
     // 4は素数でない(2で割り切れる)
     sut = is_prime(4);
+    EXPECT_EQ(sut, false);
+
+    // 39は素数でない(3で割り切れる)
+    sut = is_prime(39);
     EXPECT_EQ(sut, false);
 }
