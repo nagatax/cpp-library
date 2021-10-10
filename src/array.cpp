@@ -15,6 +15,7 @@ void ary_reverse(int a[], int len)
 
 /**
  * 線形探索(番兵法)
+ *
  * @param int[] x 検索対象
  * @param int n 検索対象の要素数
  * @param int key 検索値
@@ -41,7 +42,7 @@ int search(int x[], int n, int key)
 /**
  * 2分探索
  *
- * @param int[] x 検索対象
+ * @param int[] x 検索対象(昇順にソート済みである配列であること)
  * @param int n 検索対象の要素数
  * @param int key 検索値
  * @return 検索値のインデックス番号(検索値が存在しない場合、-1)
