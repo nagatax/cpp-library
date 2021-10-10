@@ -13,3 +13,27 @@ void ary_reverse(int a[], int len)
     }
 }
 
+/**
+ * 線形探索(番兵法)
+ * @param int[] x 検索対象
+ * @param int n 検索対象の要素数
+ * @param int key 検索値
+ * @return 検索値のインデックス番号(検索値が存在しない場合、-1)
+ */
+int search(int x[], int n, int key)
+{
+    int i = 0;
+
+    // 番兵を追加する
+    x[n] = key;
+
+    while (1) {
+        if (x[i] == key) {
+            break;
+        } else {
+            i++;
+        }
+    }
+
+    return (i == n ? -1 : i);
+}
