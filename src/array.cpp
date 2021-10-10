@@ -37,3 +37,31 @@ int search(int x[], int n, int key)
 
     return (i == n ? -1 : i);
 }
+
+/**
+ * 2分探索
+ *
+ * @param int[] x 検索対象
+ * @param int n 検索対象の要素数
+ * @param int key 検索値
+ * @return 検索値のインデックス番号(検索値が存在しない場合、-1)
+ */
+int bsearch(const int x[], int n, int key)
+{
+    int pl = 0;     // 探索範囲の左端インデックス番号
+    int pr = n-1;   // 探索範囲の右端インデックス番号
+    int pc;         // 探索範囲の中央インデックス番号
+
+    do {
+        pc = (pl + pr) / 2;
+        if (x[pc] == key) {
+            return pc;
+        } else if (x[pc] < key) {
+            pl = pc + 1;
+        } else {
+            pl = pc - 1;
+        }
+    } while (pl <= pr);
+
+    return -1;
+}

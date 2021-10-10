@@ -27,3 +27,20 @@ TEST(array_test, search) {
     sut = search(x, nx, 99);
     EXPECT_EQ(sut, -1);
 }
+
+TEST(array_test, bsearch) {
+
+    int x[] = {1, 3, 5, 7, 9};
+    int nx = sizeof(x) / sizeof(x[0]);
+    int sut = 0;
+
+    sut = bsearch(x, nx, 1);
+    EXPECT_EQ(sut, 0);
+    sut = bsearch(x, nx, 5);
+    EXPECT_EQ(sut, 2);
+    sut = bsearch(x, nx, 9);
+    EXPECT_EQ(sut, 4);
+
+    sut = bsearch(x, nx, 99);
+    EXPECT_EQ(sut, -1);
+}
