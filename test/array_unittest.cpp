@@ -18,7 +18,7 @@ TEST(array_test, search) {
 
     // 番兵用の要素を末尾に追加し領域を確保する
     int x[] = {1, 3, 5, 7, 9, 0};
-    int nx = sizeof(x) / sizeof(x[0]);
+    int nx = (sizeof(x) / sizeof(x[0])) - 1; // 配列の要素数から番兵用の要素を引く
     int sut = 0;
 
     sut = search(x, nx, 5);

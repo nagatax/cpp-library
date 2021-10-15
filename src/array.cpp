@@ -23,16 +23,14 @@ void ary_reverse(int a[], int len)
  */
 int search(int x[], int n, int key)
 {
-    int i = 0;
+    int i;
 
     // 番兵を追加する
     x[n] = key;
 
-    while (1) {
+    for(i = 0; i < n; i++) {
         if (x[i] == key) {
             break;
-        } else {
-            i++;
         }
     }
 
@@ -60,7 +58,7 @@ int bsearch(const int x[], int n, int key)
         } else if (x[pc] < key) {
             pl = pc + 1;
         } else {
-            pl = pc - 1;
+            pr = pc - 1;
         }
     } while (pl <= pr);
 
