@@ -16,8 +16,10 @@ set(static_libraries
 # Define source files
 set(cpplang_src
         src/array.cpp
+        src/hashtable.cpp
         src/math.cpp
         test/array_unittest.cpp
+        test/hashtable_unittest.cpp
         test/math_unittest.cpp
         main.cpp
         )
