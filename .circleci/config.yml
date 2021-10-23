@@ -8,7 +8,7 @@ jobs:
     steps:
       - checkout
         # Install related packages
-      - run: sudo apt install cmake g++
+      - run: sudo apt update && sudo apt upgrade && sudo apt install cmake g++ stat
         # Set up Google test
       - run: chmod +x setup_googletest.sh && ./setup_googletest.sh
         # Build project files
