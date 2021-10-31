@@ -19,6 +19,24 @@ TEST(hashtable_test, hash) {
     EXPECT_EQ(sut, 0);
 }
 
+TEST(hashtable_test, set_node) {
+
+    Node *n, *next;
+    Data d;
+
+    n = (Node *)calloc(1, sizeof(Node));
+    next = (Node *)calloc(1, sizeof(Node));
+
+    d.no = 1;
+    d.name = "name";
+
+    set_node(n, d, next);
+
+    EXPECT_EQ(n->data.no, 1);
+    EXPECT_EQ(n->data.name, "name");
+    EXPECT_EQ(n->next, next);
+}
+
 TEST(hashtable_test, free_hash) {
 
     Hash h;
