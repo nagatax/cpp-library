@@ -1,4 +1,6 @@
 #include <algorithm>
+#include <ctime>
+#include <cstdlib>
 #include <string>
 
 /**
@@ -39,6 +41,17 @@ int factorial(int n)
     } else {
         return 1;
     }
+}
+
+/**
+ * 乱数を生成する
+ *
+ * @param unsigned int number 生成する乱数の最大値
+ * @return unsigned int 乱数
+ */
+int get_random_number(unsigned int seed, unsigned int number)
+{
+    return srand(seed) , rand() % (number + 1);
 }
 
 /**

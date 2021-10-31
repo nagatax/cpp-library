@@ -24,6 +24,16 @@ TEST(math, factorial)
     EXPECT_EQ(sut, 6);
 }
 
+TEST(math, get_random_number)
+{
+    unsigned int seed = time(NULL);
+    unsigned int number = 10;
+    int sut = get_random_number(seed, number);
+
+    srand(seed);
+    EXPECT_EQ(sut, rand() % (number + 1));
+}
+
 TEST(math, is_prime)
 {
     bool sut;
