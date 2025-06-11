@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/sh
 
 # shell option
 set -eu
