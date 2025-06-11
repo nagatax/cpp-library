@@ -46,8 +46,9 @@ int factorial(int n)
 /**
  * 乱数を生成する
  *
+ * @param unsigned int seed   乱数生成の種
  * @param unsigned int number 生成する乱数の最大値
- * @return unsigned int 乱数
+ * @return int 生成された乱数
  */
 int get_random_number(unsigned int seed, unsigned int number)
 {
