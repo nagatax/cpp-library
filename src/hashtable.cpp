@@ -58,7 +58,8 @@ void set_node(Node *n, Data x, Node *next)
  */
 bool insert_node(Hash *h, Data x)
 {
-    int key = hash(h->size, x.no);
+    // calculate hash value from key "x.no" and hash table size "h->size"
+    int key = hash(x.no, h->size);
     Node *p = h->table[key];
     Node *temp;
 
