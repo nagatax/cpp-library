@@ -51,3 +51,27 @@ TEST(hashtable_test, free_hash) {
     free_hash(&h);
 //    EXPECT_EQ(NULL, h.table);
 }
+
+TEST(hashtable_test, insert_node) {
+
+    Hash h;
+    Data d;
+
+    init_hash(&h, 5);
+
+    d.no = 10;
+    d.name = "node";
+
+    bool inserted = insert_node(&h, d);
+    ASSERT_TRUE(inserted);
+
+    int index = hash(d.no, h.size);
+    ASSERT_NE(h.table[index], nullptr);
+    EXPECT_EQ(h.table[index]->data.no, d.no);
+    EXPECT_EQ(h.table[index]->data.name, d.name);
+
+    bool duplicated = insert_node(&h, d);
+    EXPECT_FALSE(duplicated);
+
+    free_hash(&h);
+}
