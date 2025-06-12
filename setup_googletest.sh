@@ -4,7 +4,7 @@
 set -eu
 
 # Variables
-PACKAGE=release-1.10.0
+PACKAGE=release-1.12.1
 PACKAGE_FILE=${PACKAGE}.tar.gz
 TEMP_FOLDER=googletest-${PACKAGE}
 
