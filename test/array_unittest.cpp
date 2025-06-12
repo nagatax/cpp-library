@@ -44,3 +44,17 @@ TEST(array_test, bsearch) {
     sut = bsearch(x, nx, 99);
     EXPECT_EQ(sut, -1);
 }
+
+TEST(array_test, bubble_sort) {
+
+    int a[] = {5, 1, 4, 2, 8};
+    int len = sizeof(a) / sizeof(a[0]);
+    int expect[] = {1, 2, 4, 5, 8};
+
+    bubble_sort(a, len);
+
+    for (int i = 0; i < len; i++) {
+        EXPECT_EQ(expect[i], a[i]);
+    }
+}
+

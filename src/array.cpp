@@ -64,3 +64,22 @@ int bsearch(const int x[], int n, int key)
 
     return -1;
 }
+
+/**
+ * Sort an integer array using bubble sort
+ *
+ * @param int[] a Target array
+ * @param int len Number of elements
+ */
+void bubble_sort(int a[], int len)
+{
+    for (int i = 0; i < len - 1; i++) {
+        for (int j = len - 1; j > i; j--) {
+            if (a[j - 1] > a[j]) {
+                int temp = a[j - 1];
+                a[j - 1] = a[j];
+                a[j] = temp;
+            }
+        }
+    }
+}

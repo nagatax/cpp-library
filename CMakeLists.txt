@@ -3,15 +3,11 @@ project(cpplang_library)
 
 set(CMAKE_CXX_STANDARD 17)
 
-# Add include directories
-include_directories(${PROJECT_SOURCE_DIR}/vendor/googletest/include)
+# Find GoogleTest from system
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIRS})
 
-# Define linking static libraries
-set(static_libraries
-        ${PROJECT_SOURCE_DIR}/vendor/googletest/lib/libgtest.a
-        ${PROJECT_SOURCE_DIR}/vendor/googletest/lib/libgtest_main.a
-        -lpthread
-        )
+set(static_libraries ${GTEST_LIBRARIES} -lpthread)
 
 # Define source files
 set(cpplang_src
