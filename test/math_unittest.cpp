@@ -18,6 +18,39 @@ TEST(math, convert_base_number)
     EXPECT_EQ(sut, "1011");
 }
 
+namespace {
+double square(double x)
+{
+    return x * x;
+}
+
+double cube(double x)
+{
+    return x * x * x;
+}
+}
+
+TEST(math, differentiate)
+{
+    // f(x) = x^2 の x = 3 における微分係数は 6
+    EXPECT_NEAR(differentiate(square, 3.0), 6.0, 1e-6);
+
+    // f(x) = x^3 の x = 2 における微分係数は 12
+    EXPECT_NEAR(differentiate(cube, 2.0), 12.0, 1e-6);
+
+    // 定数関数の微分係数は 0
+    EXPECT_NEAR(differentiate([](double) { return 5.0; }, 1.0), 0.0, 1e-6);
+}
+
+TEST(math, differentiate_second)
+{
+    // f(x) = x^2 の2階微分係数は 2
+    EXPECT_NEAR(differentiate_second(square, 3.0), 2.0, 1e-4);
+
+    // f(x) = x^3 の x = 2 における2階微分係数は 12
+    EXPECT_NEAR(differentiate_second(cube, 2.0), 12.0, 1e-4);
+}
+
 TEST(math, factorial)
 {
     int sut = factorial(3);
