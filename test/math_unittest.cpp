@@ -1,3 +1,4 @@
+#include <stdexcept>
 #include "gtest/gtest.h"
 #include "../src/math.hpp"
 
@@ -22,6 +23,13 @@ TEST(math, factorial)
 {
     int sut = factorial(3);
     EXPECT_EQ(sut, 6);
+
+    // 0の階乗は1
+    sut = factorial(0);
+    EXPECT_EQ(sut, 1);
+
+    // 負の整数は階乗が定義されない
+    EXPECT_THROW(factorial(-1), std::invalid_argument);
 }
 
 TEST(math, get_random_number)

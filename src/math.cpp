@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <ctime>
 #include <cstdlib>
+#include <stdexcept>
 #include <string>
 
 /**
@@ -30,12 +31,17 @@ std::string convert_base_number(unsigned int target, int base_number)
 
 /**
  * 整数nの階乗を返す
+ * (負の整数は階乗が定義されないためstd::invalid_argumentを送出する)
  *
  * @param int n 整数
- * @return
+ * @return int nの階乗
  */
 int factorial(int n)
 {
+    if (n < 0) {
+        throw std::invalid_argument("factorial: n must be non-negative");
+    }
+
     if (n > 0) {
         return n * factorial(n - 1);
     } else {
