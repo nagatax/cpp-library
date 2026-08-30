@@ -1,6 +1,8 @@
 #ifndef MATH
 #define MATH
 
+#include <string>
+
 using math_function = double (*)(double);
 
 std::string convert_base_number(unsigned int target, int base_number);
