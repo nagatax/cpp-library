@@ -34,7 +34,7 @@ std::string convert_base_number(unsigned int target, int base_number)
  * (f'(x) ≒ (f(x + h) - f(x - h)) / 2h)
  *
  * @param math_function f 微分対象の関数
- * @param double x 微分係数を求める点
+ * @param double x 微分係数を求めるてん
  * @param double h 差分の刻み幅
  * @return double 微分係数の近似値
  */
@@ -48,7 +48,7 @@ double differentiate(math_function f, double x, double h)
  * (f''(x) ≒ (f(x + h) - 2f(x) + f(x - h)) / h^2)
  *
  * @param math_function f 微分対象の関数
- * @param double x 微分係数を求める点
+ * @param double x 微分係数を求めるてん
  * @param double h 差分の刻み幅
  * @return double 2階微分係数の近似値
  */
