@@ -2,6 +2,7 @@
 #include <ctime>
 #include <cstdlib>
 #include <string>
+#include "math.hpp"
 
 /**
  * 基数変換を行う
@@ -26,6 +27,34 @@ std::string convert_base_number(unsigned int target, int base_number)
     std::reverse(result.begin(), result.end());
 
     return result;
+}
+
+/**
+ * 関数fの点xにおける微分係数を中心差分で近似する
+ * (f'(x) ≒ (f(x + h) - f(x - h)) / 2h)
+ *
+ * @param math_function f 微分対象の関数
+ * @param double x 微分係数を求めるてん
+ * @param double h 差分の刻み幅
+ * @return double 微分係数の近似値
+ */
+double differentiate(math_function f, double x, double h)
+{
+    return (f(x + h) - f(x - h)) / (2.0 * h);
+}
+
+/**
+ * 関数fの点xにおける2階微分係数を中心差分で近似する
+ * (f''(x) ≒ (f(x + h) - 2f(x) + f(x - h)) / h^2)
+ *
+ * @param math_function f 微分対象の関数
+ * @param double x 微分係数を求めるてん
+ * @param double h 差分の刻み幅
+ * @return double 2階微分係数の近似値
+ */
+double differentiate_second(math_function f, double x, double h)
+{
+    return (f(x + h) - 2.0 * f(x) + f(x - h)) / (h * h);
 }
 
 /**
